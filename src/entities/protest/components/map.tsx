@@ -9,8 +9,10 @@ import {
   Tooltip,
   useMapEvents,
 } from "react-leaflet";
-import Link from "next/link";
-import { Button } from "@mantine/core";
+import NextLink from "next/link";
+import { Button, Anchor } from "@mantine/core";
+import dayjs from "dayjs";
+
 import { IProtestData } from "@/data/protest";
 
 import "leaflet/dist/leaflet.css";
@@ -51,6 +53,41 @@ export default function ProtestMap({
       {protestData.map((protest) => {
         return (
           <Marker position={[protest.lat, protest.long]} key={protest.id}>
+            <Popup>
+              <div
+                key={protest.id} // FOR GETTING REF INDEX
+                className="flex flex-col space-y-2"
+              >
+                <h3 className="text-md font-bold">
+                  {dayjs(protest.datetime).format("DD MMMM YYYY, HH:mm")}
+                </h3>
+                <h3 className="text-lg font-bold leading-tight">
+                  {protest.location} - {protest.detail_location}
+                </h3>
+                <Anchor
+                  component={NextLink}
+                  underline="always"
+                  href={protest.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source
+                </Anchor>
+
+                {/* buka google maps */}
+                <Button
+                  component={NextLink}
+                  href={`https://www.google.com/maps/search/?api=1&query=${protest.lat},${protest.long}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  classNames={{
+                    label: "text-white",
+                  }}
+                >
+                  Buka Google Maps
+                </Button>
+              </div>
+            </Popup>
             <Tooltip>{protest.location}</Tooltip>
           </Marker>
         );
