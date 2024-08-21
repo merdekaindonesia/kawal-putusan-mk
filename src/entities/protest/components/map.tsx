@@ -50,48 +50,53 @@ export default function ProtestMap({
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {protestData.map((protest) => {
-        return (
-          <Marker position={[protest.lat, protest.long]} key={protest.id}>
-            <Popup>
-              <div
-                key={protest.id} // FOR GETTING REF INDEX
-                className="flex flex-col space-y-2"
-              >
-                <h3 className="text-md font-bold">
-                  {dayjs(protest.datetime).format("DD MMMM YYYY, HH:mm")}
-                </h3>
-                <h3 className="text-lg font-bold leading-tight">
-                  {protest.location} - {protest.detail_location}
-                </h3>
-                <Anchor
-                  component={NextLink}
-                  underline="always"
-                  href={protest.source}
-                  target="_blank"
-                  rel="noopener noreferrer"
+      {protestData
+        .sort(
+          (a, b) =>
+            new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
+        )
+        .map((protest) => {
+          return (
+            <Marker position={[protest.lat, protest.long]} key={protest.id}>
+              <Popup>
+                <div
+                  key={protest.id} // FOR GETTING REF INDEX
+                  className="flex flex-col space-y-2"
                 >
-                  Source
-                </Anchor>
+                  <h3 className="text-md font-bold">
+                    {dayjs(protest.datetime).format("DD MMMM YYYY, HH:mm")}
+                  </h3>
+                  <h3 className="text-lg font-bold leading-tight">
+                    {protest.location} - {protest.detail_location}
+                  </h3>
+                  <Anchor
+                    component={NextLink}
+                    underline="always"
+                    href={protest.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Source
+                  </Anchor>
 
-                {/* buka google maps */}
-                <Button
-                  component={NextLink}
-                  href={`https://www.google.com/maps/search/?api=1&query=${protest.lat},${protest.long}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  classNames={{
-                    label: "text-white",
-                  }}
-                >
-                  Buka Google Maps
-                </Button>
-              </div>
-            </Popup>
-            <Tooltip>{protest.location}</Tooltip>
-          </Marker>
-        );
-      })}
+                  {/* buka google maps */}
+                  <Button
+                    component={NextLink}
+                    href={`https://www.google.com/maps/search/?api=1&query=${protest.lat},${protest.long}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    classNames={{
+                      label: "text-white",
+                    }}
+                  >
+                    Buka Google Maps
+                  </Button>
+                </div>
+              </Popup>
+              <Tooltip>{protest.location}</Tooltip>
+            </Marker>
+          );
+        })}
     </MapContainer>
   );
 }

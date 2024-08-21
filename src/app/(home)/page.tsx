@@ -17,15 +17,7 @@ export default function Home() {
   return (
     <section className="space-y-4">
       <section className="flex justify-center items-center">
-        <div className="w-[32rem]">
-          <Image
-            component={NextImage}
-            alt="Peringatan Darurat"
-            src={peringatanDarurat}
-            width={500}
-            height={300}
-          />
-        </div>
+        <video src={"/peringatan_darurat.mp4"} autoPlay muted controls loop />
       </section>
 
       {/* lokasi protes */}
@@ -39,6 +31,18 @@ export default function Home() {
         <ProtestTable data={protestData} />
       </DefaultContainer>
       {/* end of lokasi protes */}
+
+      <section className="flex justify-center items-center">
+        <div className="w-[32rem]">
+          <Image
+            component={NextImage}
+            alt="Peringatan Darurat"
+            src={peringatanDarurat}
+            width={500}
+            height={300}
+          />
+        </div>
+      </section>
     </section>
   );
 }

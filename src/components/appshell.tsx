@@ -4,7 +4,6 @@ import { AppShell, Burger, Group, NavLink, Image, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IconHome } from "@tabler/icons-react";
 import NextImage from "next/image";
 
 import GarudaIndonesia from "@/assets/images/garuda_indonesia.jpeg";
@@ -61,6 +60,14 @@ export function HomeNavbar({
               >
                 Rangkuman
               </Button>
+
+              <Button
+                component={Link}
+                href="/info"
+                variant={pathname === "/info" ? "light" : "transparent"}
+              >
+                Info Penting!
+              </Button>
             </Group>
           </Group>
         </Group>
@@ -73,16 +80,22 @@ export function HomeNavbar({
           component={Link}
           href="/"
           active={pathname === "/"}
-          leftSection={<IconHome size="1.25rem" stroke={1.5} />}
         />
 
         <NavLink
-          label="rangkuman"
+          label="Rangkuman"
           onClick={toggle}
           component={Link}
           href="/rangkuman"
           active={pathname === "/rangkuman"}
-          leftSection={<IconHome size="1.25rem" stroke={1.5} />}
+        />
+
+        <NavLink
+          label="Info Penting!"
+          onClick={toggle}
+          component={Link}
+          href="/info"
+          active={pathname === "/info"}
         />
       </AppShell.Navbar>
 

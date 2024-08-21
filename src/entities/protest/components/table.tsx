@@ -12,21 +12,6 @@ import NextLink from "next/link";
 
 import { IProtestData } from "@/data/protest";
 
-const columns: MRT_ColumnDef<IProtestData>[] = [
-  {
-    accessorKey: "datetime",
-    header: "Tanggal",
-  },
-  {
-    accessorKey: "location",
-    header: "Lokasi",
-  },
-  {
-    accessorKey: "source",
-    header: "Sumber",
-  },
-];
-
 export function ProtestTable({ data }: { data: IProtestData[] }) {
   const columns = useMemo<MRT_ColumnDef<IProtestData>[]>(
     () => [
@@ -39,6 +24,7 @@ export function ProtestTable({ data }: { data: IProtestData[] }) {
       },
       {
         accessorFn: (row) => `${row.location} - ${row.detail_location}`,
+        id: "lokasi",
         header: "Lokasi",
       },
       {
@@ -74,6 +60,12 @@ export function ProtestTable({ data }: { data: IProtestData[] }) {
     },
     initialState: {
       showGlobalFilter: true,
+      sorting: [
+        {
+          id: "datetime",
+          desc: true,
+        },
+      ],
     },
   });
 

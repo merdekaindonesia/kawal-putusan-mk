@@ -26,6 +26,15 @@ export const data = [
     long: 106.79754121341553,
     source: "https://x.com/vincentrcrd/status/1826157785928929738",
   },
+  {
+    id: 4,
+    datetime: "2024-08-21T11:30:00Z",
+    location: "DKI Jakarta",
+    detail_location: "Depan Gedung DPR RI",
+    lat: -6.212572659545695,
+    long: 106.79754121341553,
+    source: "https://x.com/UbahBareng/status/1826206911341236287",
+  },
 ];
 
 export type IProtestData = (typeof data)[number];
