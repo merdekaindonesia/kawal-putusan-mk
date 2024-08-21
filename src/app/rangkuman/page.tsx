@@ -25,7 +25,7 @@ export default function Rangkuman() {
 
       <List listStyleType="number" spacing={8}>
         <ListItem>
-          PKS awalnya mau calonin Anies-Sohibul Iman, Jakarta "Aman".
+          PKS awalnya mau calonin Anies-Sohibul Iman, Jakarta &quot;Aman&quot;.
           Elektabilitasnya paling tinggi. Problemnya: perlu threshold 20% biar
           bisa calonin gubernur. Jadi perlu cari partai koalisi biar cukup
           menuhinnya.
