@@ -12,7 +12,7 @@ export const size = {
 export const contentType = "image/png";
 
 // Image generation
-export default async function OGImage() {
+export default async function Image() {
   // Font
   const interSemiBold = fetch(
     new URL("@/assets/fonts/Inter_24pt-SemiBold.ttf", import.meta.url)

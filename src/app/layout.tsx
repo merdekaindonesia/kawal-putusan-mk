@@ -28,6 +28,10 @@ import { HomeNavbar } from "@/components/appshell";
 export const metadata: Metadata = {
   title: "#KawalPutusanMK",
   description: "Merdeka Indonesia #KawalPutusanMK",
+  metadataBase: new URL("https://kawal-putusan-mk.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const mantineTheme: MantineThemeOverride = {
