@@ -32,6 +32,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    title: "#KawalPutusanMK",
+    description: "Merdeka Indonesia #KawalPutusanMK",
+    type: "website",
+    images: [
+      {
+        url: "/peringatan_darurat.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "#KawalPutusanMK",
+      },
+    ],
+  },
 };
 
 const mantineTheme: MantineThemeOverride = {
