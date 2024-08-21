@@ -1,7 +1,12 @@
 import dynamic from "next/dynamic";
 
+import { Image } from "@mantine/core";
+import NextImage from "next/image";
+import { DefaultContainer } from "@/components/container";
+
 import { data as protestData } from "@/data/protest";
 import { ProtestTable } from "@/entities/protest/components/table";
+import peringatanDarurat from "@/assets/images/peringatan_darurat.jpeg";
 
 const ProtestMap = dynamic(() => import("@/entities/protest/components/map"), {
   loading: () => <p>loading map...</p>,
@@ -10,9 +15,21 @@ const ProtestMap = dynamic(() => import("@/entities/protest/components/map"), {
 
 export default function Home() {
   return (
-    <section>
+    <section className="space-y-4">
+      <section className="flex justify-center items-center">
+        <div className="w-[32rem]">
+          <Image
+            component={NextImage}
+            alt="Peringatan Darurat"
+            src={peringatanDarurat}
+            width={500}
+            height={300}
+          />
+        </div>
+      </section>
+
       {/* lokasi protes */}
-      <section className="space-y-4">
+      <DefaultContainer className="space-y-4">
         <h2 className="font-bold text-3xl">Lokasi Protes</h2>
 
         <div className="h-[max(40vh,_300px)]">
@@ -20,7 +37,7 @@ export default function Home() {
         </div>
 
         <ProtestTable data={protestData} />
-      </section>
+      </DefaultContainer>
       {/* end of lokasi protes */}
     </section>
   );

@@ -35,7 +35,7 @@ export default async function OGImage() {
       >
         <img
           src={
-            "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1610945809/mpbmrw4x8hhwrg2kcjut.jpg"
+            "https://asset.kompas.com/crops/efPr8jIU2ltY_JaTcYTYpUjvtzg=/72x81:649x466/375x240/data/photo/2024/08/21/66c5af42e0b9b.jpeg"
           }
           alt="Garuda Indonesia"
         />

@@ -1,15 +1,6 @@
 "use client";
 
-import {
-  AppShell,
-  Burger,
-  Group,
-  NavLink,
-  Image,
-  Button,
-  Container,
-  rem,
-} from "@mantine/core";
+import { AppShell, Burger, Group, NavLink, Image, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -95,17 +86,11 @@ export function HomeNavbar({
         />
       </AppShell.Navbar>
 
-      <AppShell.Main>
-        <Container size={rem(1440)} className="p-4 bg-white rounded-sm">
-          {children}
-        </Container>
-      </AppShell.Main>
+      <AppShell.Main>{children}</AppShell.Main>
 
-      <AppShell.Footer className="p-6">
-        <div className="text-center text-xs">
-          <p>&copy; {currentYear} - #KawalPutusanMK</p>
-        </div>
-      </AppShell.Footer>
+      <div className="text-center text-xs bg-white p-8 mt-8">
+        <p>&copy; {currentYear} - #KawalPutusanMK</p>
+      </div>
     </AppShell>
   );
 }

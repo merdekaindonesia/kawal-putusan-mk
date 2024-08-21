@@ -1,10 +1,11 @@
 import { List, ListItem, Anchor } from "@mantine/core";
 import NextLink from "next/link";
 import { IconBrandX } from "@tabler/icons-react";
+import { DefaultContainer } from "@/components/container";
 
 export default function Rangkuman() {
   return (
-    <div className="pr-6 space-y-4">
+    <DefaultContainer className="pr-6 space-y-4">
       <h2 className="font-bold text-3xl">Rangkuman</h2>
 
       <div className="flex items-center">
@@ -122,6 +123,6 @@ export default function Rangkuman() {
           </List>
         </ListItem>
       </List>
-    </div>
+    </DefaultContainer>
   );
 }
