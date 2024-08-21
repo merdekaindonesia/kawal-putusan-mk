@@ -33,12 +33,7 @@ export default async function Image() {
           justifyContent: "center",
         }}
       >
-        <img
-          src={
-            "https://asset.kompas.com/crops/efPr8jIU2ltY_JaTcYTYpUjvtzg=/72x81:649x466/375x240/data/photo/2024/08/21/66c5af42e0b9b.jpeg"
-          }
-          alt="Garuda Indonesia"
-        />
+        <img src={"/peringatan_darurat.jpeg"} alt="Garuda Indonesia" />
       </div>
     ),
     // ImageResponse options
