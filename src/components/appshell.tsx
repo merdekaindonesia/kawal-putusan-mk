@@ -1,6 +1,15 @@
 "use client";
 
-import { AppShell, Burger, Group, NavLink, Image, Button } from "@mantine/core";
+import {
+  AppShell,
+  Burger,
+  Group,
+  NavLink,
+  Image,
+  Button,
+  Container,
+  rem,
+} from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -26,7 +35,7 @@ export function HomeNavbar({
         breakpoint: "sm",
         collapsed: { desktop: true, mobile: !opened },
       }}
-      padding="md"
+      padding="xs"
     >
       <AppShell.Header>
         <Group h="100%" px="md">
@@ -53,6 +62,14 @@ export function HomeNavbar({
               >
                 Beranda
               </Button>
+
+              <Button
+                component={Link}
+                href="/rangkuman"
+                variant={pathname === "/rangkuman" ? "light" : "transparent"}
+              >
+                Rangkuman
+              </Button>
             </Group>
           </Group>
         </Group>
@@ -67,9 +84,22 @@ export function HomeNavbar({
           active={pathname === "/"}
           leftSection={<IconHome size="1.25rem" stroke={1.5} />}
         />
+
+        <NavLink
+          label="rangkuman"
+          onClick={toggle}
+          component={Link}
+          href="/rangkuman"
+          active={pathname === "/rangkuman"}
+          leftSection={<IconHome size="1.25rem" stroke={1.5} />}
+        />
       </AppShell.Navbar>
 
-      <AppShell.Main>{children}</AppShell.Main>
+      <AppShell.Main>
+        <Container size={rem(1440)} className="p-4 bg-white rounded-sm">
+          {children}
+        </Container>
+      </AppShell.Main>
 
       <AppShell.Footer className="p-6">
         <div className="text-center text-xs">

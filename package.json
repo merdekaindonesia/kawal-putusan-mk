@@ -16,14 +16,18 @@
     "@mantine/notifications": "7.12.1",
     "@tabler/icons-react": "3.12.0",
     "dayjs": "1.11.13",
+    "leaflet": "1.9.4",
+    "mantine-react-table": "2.0.0-beta.6",
     "next": "14.2.5",
     "nextjs-toploader": "^1.6.12",
     "react": "^18",
     "react-dom": "^18",
+    "react-leaflet": "4.2.1",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

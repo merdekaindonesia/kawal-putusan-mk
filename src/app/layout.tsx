@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 import "@mantine/dates/styles.css";
+import "mantine-react-table/styles.css";
 
 import {
   MantineProvider,
