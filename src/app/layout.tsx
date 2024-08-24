@@ -28,15 +28,17 @@ import MantineDatesProvider from "@/providers/mantine-dates-provider";
 import { HomeNavbar } from "@/components/appshell";
 
 export const metadata: Metadata = {
-  title: "#KawalPutusanMK",
-  description: "Merdeka Indonesia #KawalPutusanMK",
+  title: `Merdeka Indonesia - #KawalPutusanMK`,
+  description:
+    "Website yang memantau dan mendokumentasikan gerakan #KawalPutusanMK dan gerakan-gerakan lainnya yang berjuang untuk keadilan dan demokrasi di Indonesia.",
   metadataBase: new URL("https://kawal-putusan-mk.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "#KawalPutusanMK",
-    description: "Merdeka Indonesia #KawalPutusanMK",
+    title: "Merdeka Indonesia - #KawalPutusanMK",
+    description: "Mendokumentasikan perjuangan rakyat untuk keadilan Indonesia",
+    url: "/",
     type: "website",
     images: [
       {
