@@ -1,14 +1,14 @@
 "use client";
 
-import { useMemo } from "react";
 import { Anchor } from "@mantine/core";
+import dayjs from "dayjs";
 import {
   MantineReactTable,
   useMantineReactTable,
   type MRT_ColumnDef,
 } from "mantine-react-table";
-import dayjs from "dayjs";
 import NextLink from "next/link";
+import { useMemo } from "react";
 
 import { IDemoData } from "@/data/demo";
 
@@ -23,7 +23,10 @@ export function DemoTable({ data }: { data: IDemoData[] }) {
           dayjs(cell.getValue<Date>()).format("DD MMMM YYYY, HH:mm"),
       },
       {
-        accessorFn: (row) => `${row.location} - ${row.detail_location}`,
+        accessorFn: (row) =>
+          row.detail_location
+            ? `${row.location} - ${row.detail_location}`
+            : row.location,
         id: "lokasi",
         header: "Lokasi",
       },
@@ -43,7 +46,7 @@ export function DemoTable({ data }: { data: IDemoData[] }) {
         ),
       },
     ],
-    []
+    [],
   );
 
   const table = useMantineReactTable({
