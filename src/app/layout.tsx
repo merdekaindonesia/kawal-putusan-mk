@@ -16,7 +16,6 @@ import {
   DEFAULT_THEME,
   createTheme,
   type MantineColorsTuple,
-  type MantineThemeOverride,
 } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 import { ModalsProvider } from "@mantine/modals";

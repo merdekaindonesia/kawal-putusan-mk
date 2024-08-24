@@ -1,11 +1,19 @@
 import { List, ListItem } from "@mantine/core";
+import { Metadata } from "next";
 
 import { DefaultContainer } from "@/components/container";
 import { CachedTweet } from "@/components/twitter";
+import { Breadcrumb } from "@/components/breadcrumb";
+
+export const metadata: Metadata = {
+  title: `Rangkuman #KawalPutusanMK - Merdeka Indonesia`,
+};
 
 export default function Rangkuman() {
   return (
     <DefaultContainer className="pr-6 space-y-4">
+      <Breadcrumb />
+
       <h2 className="font-bold text-3xl">Rangkuman</h2>
 
       <div className="space-y-2">

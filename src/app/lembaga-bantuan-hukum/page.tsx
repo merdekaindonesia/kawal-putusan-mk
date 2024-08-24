@@ -1,12 +1,20 @@
 import { Image } from "@mantine/core";
 import NextImage from "next/image";
+import { Metadata } from "next";
 
 import { DefaultContainer } from "@/components/container";
 import { CachedTweet } from "@/components/twitter";
+import { Breadcrumb } from "@/components/breadcrumb";
+
+export const metadata: Metadata = {
+  title: `Lembaga Bantuan Hukum - Merdeka Indonesia`,
+};
 
 export default function Info() {
   return (
     <DefaultContainer className="pr-6 space-y-4">
+      <Breadcrumb />
+
       <h2 className="font-bold text-3xl">Lembaga Bantuan Hukum</h2>
 
       <div className="space-y-2">
