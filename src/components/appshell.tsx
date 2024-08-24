@@ -22,14 +22,14 @@ export function HomeNavbar({
       header={{ height: 60 }}
       navbar={{
         width: 300,
-        breakpoint: "sm",
+        breakpoint: "md",
         collapsed: { desktop: true, mobile: !opened },
       }}
       padding="xs"
     >
       <AppShell.Header>
         <Group h="100%" px="md">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+          <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
           <Group justify="space-between" style={{ flex: 1 }}>
             <div className="flex justify-center items-center gap-3">
               <Image
@@ -44,13 +44,25 @@ export function HomeNavbar({
               <p className="font-bold text-lg">#KawalPutusanMK</p>
             </div>
 
-            <Group ml="xl" gap={8} visibleFrom="sm">
+            <Group ml="xl" gap={8} visibleFrom="md">
               <Button
                 component={Link}
                 href="/"
                 variant={pathname === "/" ? "ghost" : "transparent"}
               >
                 Beranda
+              </Button>
+
+              <Button
+                component={Link}
+                href="/lembaga-bantuan-hukum"
+                variant={
+                  pathname === "/lembaga-bantuan-hukum"
+                    ? "ghost"
+                    : "transparent"
+                }
+              >
+                Bantuan Hukum
               </Button>
 
               <Button
@@ -82,6 +94,14 @@ export function HomeNavbar({
           component={Link}
           href="/"
           active={pathname === "/"}
+        />
+
+        <NavLink
+          label="Bantuan Hukum"
+          onClick={toggle}
+          component={Link}
+          href="/lembaga-bantuan-hukum"
+          active={pathname === "/lembaga-bantuan-hukum"}
         />
 
         <NavLink
