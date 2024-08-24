@@ -35,6 +35,15 @@ export const data = [
     long: 106.79754121341553,
     source: "https://x.com/UbahBareng/status/1826206911341236287",
   },
+  {
+    id: 5,
+    datetime: "2024-08-23T02:00:00Z",
+    location: "DKI Jakarta",
+    detail_location: "Kantor KPU",
+    lat: -6.17470242766643,
+    long: 106.83250466804883,
+    source: "https://x.com/elisa_jkt/status/1826905720568365367",
+  },
 ];
 
 export type IDemoData = (typeof data)[number];

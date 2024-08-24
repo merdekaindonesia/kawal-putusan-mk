@@ -1,10 +1,10 @@
 "use client";
 
-import { AppShell, Burger, Group, NavLink, Image, Button } from "@mantine/core";
+import { AppShell, Burger, Button, Group, Image, NavLink } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import NextImage from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import NextImage from "next/image";
 
 import GarudaIndonesia from "@/assets/images/garuda_indonesia.jpeg";
 
@@ -31,7 +31,7 @@ export function HomeNavbar({
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
           <Group justify="space-between" style={{ flex: 1 }}>
-            <div className="flex justify-center items-center gap-3">
+            <div className="flex items-center justify-center gap-3">
               <Image
                 component={NextImage}
                 alt="Garuda Indonesia"
@@ -41,7 +41,7 @@ export function HomeNavbar({
                 className="drop-shadow"
                 src={GarudaIndonesia}
               />
-              <p className="font-bold text-lg">#KawalPutusanMK</p>
+              <p className="text-lg font-bold">#KawalPutusanMK</p>
             </div>
 
             <Group ml="xl" gap={8} visibleFrom="md">
@@ -51,6 +51,14 @@ export function HomeNavbar({
                 variant={pathname === "/" ? "ghost" : "transparent"}
               >
                 Beranda
+              </Button>
+
+              <Button
+                component={Link}
+                href="/rangkuman"
+                variant={pathname === "/rangkuman" ? "ghost" : "transparent"}
+              >
+                Rangkuman
               </Button>
 
               <Button
@@ -67,10 +75,10 @@ export function HomeNavbar({
 
               <Button
                 component={Link}
-                href="/rangkuman"
-                variant={pathname === "/rangkuman" ? "ghost" : "transparent"}
+                href="/donasi"
+                variant={pathname === "/donasi" ? "ghost" : "transparent"}
               >
-                Rangkuman
+                Donasi
               </Button>
 
               <Button
@@ -97,6 +105,14 @@ export function HomeNavbar({
         />
 
         <NavLink
+          label="Rangkuman"
+          onClick={toggle}
+          component={Link}
+          href="/rangkuman"
+          active={pathname === "/rangkuman"}
+        />
+
+        <NavLink
           label="Bantuan Hukum"
           onClick={toggle}
           component={Link}
@@ -105,11 +121,11 @@ export function HomeNavbar({
         />
 
         <NavLink
-          label="Rangkuman"
+          label="Donasi"
           onClick={toggle}
           component={Link}
-          href="/rangkuman"
-          active={pathname === "/rangkuman"}
+          href="/donasi"
+          active={pathname === "/donasi"}
         />
 
         <NavLink
@@ -123,7 +139,7 @@ export function HomeNavbar({
 
       <AppShell.Main>{children}</AppShell.Main>
 
-      <div className="text-center text-xs bg-white p-8 mt-8">
+      <div className="mt-8 bg-white p-8 text-center text-xs">
         <p>&copy; {currentYear} - #KawalPutusanMK</p>
       </div>
     </AppShell>
