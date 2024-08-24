@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const donasiList = [
-  <div className="space-y-2">
+  <div className="space-y-2" key={"1"}>
     <Anchor
       component={Link}
       href={"https://x.com/humaniesproject"}
@@ -22,7 +22,7 @@ const donasiList = [
       Humanies (Huma Inisiatif Indonesia)
     </Anchor>
 
-    <div className="font-semibold text-lg">
+    <div className="text-lg font-semibold">
       <p>Bank Mandiri</p>
       <p>1260012252432</p>
       <p>an Huma Inisiatif Indonesia</p>
@@ -34,12 +34,12 @@ const donasiList = [
 
 export default function Info() {
   return (
-    <DefaultContainer className="pr-6 space-y-4">
+    <DefaultContainer className="space-y-4 pr-6">
       <Breadcrumb />
 
-      <h2 className="font-bold text-3xl">Donasi</h2>
+      <h2 className="text-3xl font-bold">Donasi</h2>
 
-      <h3 className="font-semibold text-xl">
+      <h3 className="text-xl font-semibold">
         Yayasan / gerakan yang kami percayai:
       </h3>
 

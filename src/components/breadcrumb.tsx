@@ -1,8 +1,8 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { Anchor, Breadcrumbs } from "@mantine/core";
 import Link from "next/link";
-import { Breadcrumbs, Anchor } from "@mantine/core";
+import { usePathname } from "next/navigation";
 
 export function Breadcrumb() {
   const paths = usePathname();
@@ -22,7 +22,7 @@ export function Breadcrumb() {
           .join(" ");
 
         return (
-          <Anchor component={Link} href={href}>
+          <Anchor component={Link} href={href} key={link}>
             {itemLink}
           </Anchor>
         );

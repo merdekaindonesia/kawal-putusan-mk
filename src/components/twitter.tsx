@@ -1,16 +1,18 @@
+import Image from "next/image";
 import { Suspense } from "react";
 import {
-  TweetSkeleton,
   EmbeddedTweet,
   TweetNotFound,
+  TweetSkeleton,
   type TwitterComponents,
 } from "react-tweet";
-import Image from "next/image";
 
 import { getCachedTweet } from "@/utils/twitter";
 
 const components: TwitterComponents = {
+  // eslint-disable-next-line jsx-a11y/alt-text
   AvatarImg: (props) => <Image {...props} />,
+  // eslint-disable-next-line jsx-a11y/alt-text
   MediaImg: (props) => <Image {...props} fill unoptimized />,
 };
 
