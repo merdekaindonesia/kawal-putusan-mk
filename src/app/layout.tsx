@@ -14,6 +14,8 @@ import {
   ColorSchemeScript,
   Box,
   DEFAULT_THEME,
+  createTheme,
+  type MantineColorsTuple,
   type MantineThemeOverride,
 } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
@@ -47,13 +49,27 @@ export const metadata: Metadata = {
   },
 };
 
-const mantineTheme: MantineThemeOverride = {
+const resistanceBlue: MantineColorsTuple = [
+  "#ebeeff",
+  "#d1d6fa",
+  "#9faaf8",
+  "#6a7cf7",
+  "#4154f6",
+  "#2b3cf6",
+  "#222ff8",
+  "#1823dd",
+  "#101fc5",
+  "#0019ad",
+];
+
+const mantineTheme = createTheme({
   fontFamily: `${inter.style.fontFamily}, ${DEFAULT_THEME.fontFamily}`,
   headings: {
     fontFamily: `${inter.style.fontFamily}, ${DEFAULT_THEME.fontFamily}`,
   },
-  primaryColor: "blue",
-};
+  colors: { resistanceBlue },
+  primaryColor: "resistanceBlue",
+});
 
 export default function RootLayout({
   children,
@@ -67,7 +83,7 @@ export default function RootLayout({
       </head>
 
       <body className={inter.className}>
-        <NextTopLoader />
+        <NextTopLoader color="#001489" />
 
         <MantineProvider theme={mantineTheme}>
           <MantineDatesProvider>

@@ -13,7 +13,7 @@ import NextLink from "next/link";
 import { Button, Anchor } from "@mantine/core";
 import dayjs from "dayjs";
 
-import { IProtestData } from "@/data/protest";
+import { IDemoData } from "@/data/demo";
 
 import "leaflet/dist/leaflet.css";
 
@@ -33,11 +33,7 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 // END FIX LEAFLET ICONS
 
-export default function ProtestMap({
-  protestData,
-}: {
-  protestData: IProtestData[];
-}) {
+export default function DemoMap({ demoData }: { demoData: IDemoData[] }) {
   return (
     <MapContainer
       center={[-2.0591899, 111.4539954]}
@@ -50,29 +46,29 @@ export default function ProtestMap({
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {protestData
+      {demoData
         .sort(
           (a, b) =>
             new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
         )
-        .map((protest) => {
+        .map((demo) => {
           return (
-            <Marker position={[protest.lat, protest.long]} key={protest.id}>
+            <Marker position={[demo.lat, demo.long]} key={demo.id}>
               <Popup>
                 <div
-                  key={protest.id} // FOR GETTING REF INDEX
+                  key={demo.id} // FOR GETTING REF INDEX
                   className="flex flex-col space-y-2"
                 >
                   <h3 className="text-md font-bold">
-                    {dayjs(protest.datetime).format("DD MMMM YYYY, HH:mm")}
+                    {dayjs(demo.datetime).format("DD MMMM YYYY, HH:mm")}
                   </h3>
                   <h3 className="text-lg font-bold leading-tight">
-                    {protest.location} - {protest.detail_location}
+                    {demo.location} - {demo.detail_location}
                   </h3>
                   <Anchor
                     component={NextLink}
                     underline="always"
-                    href={protest.source}
+                    href={demo.source}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -82,7 +78,7 @@ export default function ProtestMap({
                   {/* buka google maps */}
                   <Button
                     component={NextLink}
-                    href={`https://www.google.com/maps/search/?api=1&query=${protest.lat},${protest.long}`}
+                    href={`https://www.google.com/maps/search/?api=1&query=${demo.lat},${demo.long}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     classNames={{
@@ -93,7 +89,7 @@ export default function ProtestMap({
                   </Button>
                 </div>
               </Popup>
-              <Tooltip>{protest.location}</Tooltip>
+              <Tooltip>{demo.location}</Tooltip>
             </Marker>
           );
         })}

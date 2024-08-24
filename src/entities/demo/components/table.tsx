@@ -10,10 +10,10 @@ import {
 import dayjs from "dayjs";
 import NextLink from "next/link";
 
-import { IProtestData } from "@/data/protest";
+import { IDemoData } from "@/data/demo";
 
-export function ProtestTable({ data }: { data: IProtestData[] }) {
-  const columns = useMemo<MRT_ColumnDef<IProtestData>[]>(
+export function DemoTable({ data }: { data: IDemoData[] }) {
+  const columns = useMemo<MRT_ColumnDef<IDemoData>[]>(
     () => [
       {
         accessorKey: "datetime",

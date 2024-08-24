@@ -4,11 +4,11 @@ import { Image } from "@mantine/core";
 import NextImage from "next/image";
 import { DefaultContainer } from "@/components/container";
 
-import { data as protestData } from "@/data/protest";
-import { ProtestTable } from "@/entities/protest/components/table";
+import { data as demoData } from "@/data/demo";
+import { DemoTable } from "@/entities/demo/components/table";
 import peringatanDarurat from "@/assets/images/peringatan_darurat.jpeg";
 
-const ProtestMap = dynamic(() => import("@/entities/protest/components/map"), {
+const DemoMap = dynamic(() => import("@/entities/demo/components/map"), {
   loading: () => <p>loading map...</p>,
   ssr: false,
 });
@@ -20,17 +20,17 @@ export default function Home() {
         <video src={"/peringatan_darurat.mp4"} autoPlay muted controls loop />
       </section>
 
-      {/* lokasi protes */}
+      {/* lokasi demo */}
       <DefaultContainer className="space-y-4">
-        <h2 className="font-bold text-3xl">Lokasi Protes</h2>
+        <h2 className="font-bold text-3xl">Lokasi Demo</h2>
 
         <div className="h-[max(40vh,_300px)]">
-          <ProtestMap protestData={protestData} />
+          <DemoMap demoData={demoData} />
         </div>
 
-        <ProtestTable data={protestData} />
+        <DemoTable data={demoData} />
       </DefaultContainer>
-      {/* end of lokasi protes */}
+      {/* end of lokasi demo */}
 
       <section className="flex justify-center items-center">
         <div className="w-[32rem]">

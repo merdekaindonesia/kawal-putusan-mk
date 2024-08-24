@@ -37,4 +37,4 @@ export const data = [
   },
 ];
 
-export type IProtestData = (typeof data)[number];
+export type IDemoData = (typeof data)[number];

@@ -1,8 +1,8 @@
-import { Anchor, Image } from "@mantine/core";
-import NextLink from "next/link";
-import { IconBrandX } from "@tabler/icons-react";
-import { DefaultContainer } from "@/components/container";
+import { Image } from "@mantine/core";
 import NextImage from "next/image";
+
+import { DefaultContainer } from "@/components/container";
+import { CachedTweet } from "@/components/twitter";
 
 export default function Info() {
   return (
@@ -11,19 +11,10 @@ export default function Info() {
         Info Penting Bagi yang Turun ke Jalan!
       </h2>
 
-      <div className="flex items-center">
+      <div className="space-y-2">
         <p>Sumber: </p>
 
-        <IconBrandX size={18} className="ml-2 mr-1" />
-        <Anchor
-          component={NextLink}
-          underline="always"
-          href="https://x.com/txtdrjkt/status/1826226270843318547"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @txtdrjkt
-        </Anchor>
+        <CachedTweet id="1826226270843318547" />
       </div>
 
       <section className="grid lg:grid-cols-2 gap-4">

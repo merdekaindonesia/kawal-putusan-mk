@@ -1,26 +1,17 @@
-import { List, ListItem, Anchor } from "@mantine/core";
-import NextLink from "next/link";
-import { IconBrandX } from "@tabler/icons-react";
+import { List, ListItem } from "@mantine/core";
+
 import { DefaultContainer } from "@/components/container";
+import { CachedTweet } from "@/components/twitter";
 
 export default function Rangkuman() {
   return (
     <DefaultContainer className="pr-6 space-y-4">
       <h2 className="font-bold text-3xl">Rangkuman</h2>
 
-      <div className="flex items-center">
+      <div className="space-y-2">
         <p>Sumber: </p>
 
-        <IconBrandX size={18} className="ml-2 mr-1" />
-        <Anchor
-          component={NextLink}
-          underline="always"
-          href="https://x.com/ardisatriawan/status/1826054580813312397"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @ardisatriawan
-        </Anchor>
+        <CachedTweet id="1826054580813312397" />
       </div>
 
       <List listStyleType="number" spacing={8}>

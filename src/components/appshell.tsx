@@ -48,7 +48,7 @@ export function HomeNavbar({
               <Button
                 component={Link}
                 href="/"
-                variant={pathname === "/" ? "light" : "transparent"}
+                variant={pathname === "/" ? "ghost" : "transparent"}
               >
                 Beranda
               </Button>
@@ -56,17 +56,19 @@ export function HomeNavbar({
               <Button
                 component={Link}
                 href="/rangkuman"
-                variant={pathname === "/rangkuman" ? "light" : "transparent"}
+                variant={pathname === "/rangkuman" ? "ghost" : "transparent"}
               >
                 Rangkuman
               </Button>
 
               <Button
                 component={Link}
-                href="/info"
-                variant={pathname === "/info" ? "light" : "transparent"}
+                href="/persiapan-demo"
+                variant={
+                  pathname === "/persiapan-demo" ? "ghost" : "transparent"
+                }
               >
-                Info Penting!
+                Persiapan Demo
               </Button>
             </Group>
           </Group>
