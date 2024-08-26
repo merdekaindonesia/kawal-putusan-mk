@@ -1,12 +1,21 @@
 "use client";
 
-import { AppShell, Burger, Button, Group, Image, NavLink } from "@mantine/core";
+import {
+  Anchor,
+  AppShell,
+  Burger,
+  Button,
+  Group,
+  Image,
+  NavLink,
+} from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import NextImage from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import GarudaIndonesia from "@/assets/images/garuda_indonesia.jpeg";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 export function HomeNavbar({
   children,
@@ -129,18 +138,29 @@ export function HomeNavbar({
         />
 
         <NavLink
-          label="Info Penting!"
+          label="Persiapan Demo"
           onClick={toggle}
           component={Link}
-          href="/info"
-          active={pathname === "/info"}
+          href="/persiapan-demo"
+          active={pathname === "/persiapan-demo"}
         />
       </AppShell.Navbar>
 
       <AppShell.Main>{children}</AppShell.Main>
 
-      <div className="mt-8 bg-white p-8 text-center text-xs">
+      <div className="mt-8 flex items-center justify-center gap-4 bg-white p-8">
         <p>&copy; {currentYear} - #KawalPutusanMK</p>
+
+        <p>-</p>
+
+        <Anchor
+          component={Link}
+          className="flex gap-2"
+          href={"https://github.com/merdekaindonesia/kawal-putusan-mk"}
+        >
+          Open Source di Github
+          <IconBrandGithub stroke={1.5} />
+        </Anchor>
       </div>
     </AppShell>
   );
